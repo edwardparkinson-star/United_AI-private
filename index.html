@@ -10,6 +10,7 @@
 
   OWNER SETUP (do once):
   1. Set OWNER_PIN below to a PIN only you know.
+  2. Set OWNER_DEVICE_ID to the owner phone's device ID (shown in the owner panel) so only that phone can change settings.
   2. Create a $5/year recurring product in Stripe, paste its Payment Link into STRIPE_ANNUAL_LINK.
   3. On YOUR phone: tap the UNITED title 5 times, enter the PIN -> owner panel unlocks on this device only.
   4. Flip "Start annual charge" ON when dispatch is proven live. Leave it OFF while in TEST.
@@ -151,7 +152,8 @@
 
   <!-- OWNER-ONLY PANEL: hidden until title-tapped 5x + PIN -->
   <div id="ownerPanel" class="owner small" style="display:none">
-    <strong>Owner controls (this device only)</strong><br><br>
+    <strong>Owner controls (owner phone only)</strong><br>
+    <div id="ownerDeviceState" style="margin:6px 0;color:var(--muted);font-size:.78rem"></div>
     <label class="switch"><input id="chargeSwitch" type="checkbox"> Start annual charge ($5/year)</label>
     <div id="chargeState" style="margin-top:8px;color:var(--muted)">Charging is OFF — app is free.</div>
   </div>
@@ -194,7 +196,7 @@
   // ============ CONFIG ============
   const TEST_RELAY_ENDPOINT = 'https://forget-optional-interests-females.trycloudflare.com'; // trycloudflare URLs EXPIRE — use a permanent relay
   const TEST_RELAY_TOKEN = crypto.randomUUID();
-  const TEST_PHONE = '(713) 380-1196'; // add your number only when testing SMS
+  const TEST_PHONE = ''; // add your number only when testing SMS
 
   // ---- RAPIDSOS (fill in after partnership onboarding) ----
   const RAPIDSOS_API_URL = '';
@@ -206,13 +208,15 @@
   const STRIPE_ANNUAL_LINK = 'https://buy.stripe.com/00w4gz9co3U2357bJGfAc01';   // paste your Stripe $5/year Payment Link here
   const PRICE_LABEL = '$5/year';
   const OWNER_PIN = '1196';        // CHANGE THIS to a PIN only you know
+  const OWNER_DEVICE_ID = '';      // set to the owner phone's device ID (shown in the owner panel) — only that phone opens owner controls
   // --------------------------------
 
   // constants
   const UNIVERSAL_CODE = 'UNITED-EMS-ALERT-001';
   const TEST_SMS_MESSAGE = 'UNITED TEST ALERT — DO NOT DISPATCH EMS';
   const EMS_ENABLED_KEY = 'united_ems_enabled_v1';
-  const OWNER_KEY  = 'united_owner_v1';       // this device is the owner's
+  const OWNER_KEY  = 'united_owner_v1';       // this device unlocked owner mode
+  const DEVICE_ID_KEY = 'united_device_id_v1'; // this phone's stable ID
   const CHARGE_KEY = 'united_charge_on_v1';  // owner flipped "start annual charge"
   const SUB_KEY    = 'united_sub_v1';        // this device paid (honor-system; see header)
 
@@ -228,6 +232,19 @@
   const setStatus = (txt, html = false) => { const el = $('status'); if (html) el.innerHTML = txt; else el.textContent = txt; };
   const setModeLabel = () => { $('modeLabel').textContent = isEmsEnabledLocally() ? 'EMS (LIVE)' : 'TEST'; };
   const isOwner = () => localStorage.getItem(OWNER_KEY) === '1';
+  function getDeviceId() {
+    let id = localStorage.getItem(DEVICE_ID_KEY);
+    if (!id) {
+      id = 'dev-' + Math.random().toString(36).slice(2, 10) + Date.now().toString(36);
+      localStorage.setItem(DEVICE_ID_KEY, id);
+    }
+    return id;
+  }
+  const isOwnerDevice = () => !OWNER_DEVICE_ID || getDeviceId() === OWNER_DEVICE_ID;
+  function syncOwnerDeviceUI() {
+    const el = $('ownerDeviceState');
+    if (el) el.textContent = 'This phone ID: ' + getDeviceId() + (OWNER_DEVICE_ID ? ' (keyed)' : ' (not keyed — send this ID to bind this phone)');
+  }
   const isChargeOn = () => localStorage.getItem(CHARGE_KEY) === '1';
   const isSubscribed = () => localStorage.getItem(SUB_KEY) === '1';
 
@@ -249,17 +266,18 @@
       titleTapTimer = setTimeout(() => { titleTaps = 0; }, 3000);
       if (titleTaps >= 5) {
         titleTaps = 0;
-        if (isOwner()) { $('ownerPanel').style.display = ''; return; }
+        if (!isOwnerDevice()) { alert('Not the owner phone — owner controls are disabled on this device.'); return; }
+        if (isOwner()) { $('ownerPanel').style.display = ''; syncOwnerDeviceUI(); return; }
         const pin = prompt('Owner PIN:');
         if (pin === OWNER_PIN) {
           localStorage.setItem(OWNER_KEY, '1');
           $('ownerPanel').style.display = '';
-          syncChargeUI();
+          syncChargeUI(); syncOwnerDeviceUI();
           alert('Owner mode unlocked on this device.');
         } else if (pin !== null) alert('Wrong PIN.');
       }
     });
-    if (isOwner()) $('ownerPanel').style.display = '';
+    if (isOwner() && isOwnerDevice()) { $('ownerPanel').style.display = ''; syncOwnerDeviceUI(); }
     $('chargeSwitch').checked = isChargeOn();
     $('chargeSwitch').addEventListener('change', e => {
       if (e.target.checked) localStorage.setItem(CHARGE_KEY, '1');
