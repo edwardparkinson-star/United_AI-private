@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>UNITED Responder Proximity System - Concept and Pilot Proposal</title>
+<style>
+@page{size:A4;margin:0}*{box-sizing:border-box;print-color-adjust:exact;-webkit-print-color-adjust:exact}html,body{margin:0;background:#eef3f6;color:#132733;font-family:'Liberation Sans','Noto Sans',sans-serif}body{font-size:10.4pt;line-height:1.42}.page{width:210mm;height:297mm;min-height:297mm;padding:17mm 18mm 15mm;background:#fff;position:relative;overflow:hidden;page-break-after:always}.page:last-child{page-break-after:auto}.topline{height:2mm;background:#00a8a8;position:absolute;top:0;left:0;right:0}.header{display:flex;justify-content:space-between;align-items:center;font-size:8pt;color:#58707d;border-bottom:.35mm solid #d9e4e8;padding-bottom:3mm;margin-bottom:7mm;letter-spacing:.04em}.footer{position:absolute;left:18mm;right:18mm;bottom:7mm;border-top:.3mm solid #d9e4e8;padding-top:2.5mm;font-size:8.1pt;color:#637985;display:flex;justify-content:space-between}.compact .tbl td{padding:1.8mm 2.2mm}.compact .tbl{margin-bottom:3mm}.compact .callout{margin:3mm 0;padding:3mm 5mm}.cover{background:#0e2936;color:#f7fbfc;padding:24mm 20mm}.cover .topline{height:4mm;background:#21d4c2}.cover h1{font-size:31pt;line-height:1.04;margin:47mm 0 7mm;max-width:150mm;letter-spacing:-.025em;color:#f7fbfc}.cover .sub{font-size:15pt;line-height:1.35;color:#cbe4e8;max-width:145mm}.cover .rule{width:28mm;height:1mm;background:#21d4c2;margin:10mm 0}.cover .meta{position:absolute;left:20mm;bottom:24mm;color:#a9c3ca;font-size:10pt}.cover .mark{position:absolute;right:20mm;top:25mm;width:42mm;height:42mm;border:1.5mm solid #21d4c2;border-radius:50%;display:grid;place-items:center;color:#21d4c2;font-size:10pt;font-weight:bold;letter-spacing:.13em}.cover .mark:before,.cover .mark:after{content:"";position:absolute;background:#21d4c2}.cover .mark:before{width:54mm;height:.45mm}.cover .mark:after{height:54mm;width:.45mm}h1,h2,h3{margin:0;color:#0e2936}h2{font-size:21pt;line-height:1.15;letter-spacing:-.015em;margin-bottom:5mm}h3{font-size:12.2pt;margin-bottom:2mm}p{margin:0 0 3.2mm}ul,ol{margin:1.5mm 0 3.5mm;padding-left:5mm}li{margin-bottom:1.5mm}.lead{font-size:12.2pt;line-height:1.45;color:#35505d;margin-bottom:6mm}.accent{color:#008b8b}.kicker{font-size:8pt;letter-spacing:.14em;text-transform:uppercase;color:#008b8b;font-weight:bold;margin-bottom:2mm}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:5mm}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:4mm}.card{border:.35mm solid #d7e3e8;border-radius:2mm;padding:4mm;background:#fbfdfe}.card.dark{background:#103340;color:#eefafb;border-color:#103340}.card.dark h3{color:#64e0d4}.callout{border-left:1.3mm solid #00a8a8;background:#effafa;padding:4mm 5mm;margin:4mm 0}.warning{border-left-color:#ee8d43;background:#fff6ee}.num{font-size:20pt;font-weight:bold;color:#00a8a8;line-height:1}.small{font-size:8.7pt;color:#5a707b}.tight li{margin-bottom:.9mm}.label{font-size:8.1pt;text-transform:uppercase;letter-spacing:.07em;color:#58707d;font-weight:bold}.pill{display:inline-block;border:.3mm solid #99acb4;border-radius:99px;padding:1mm 2.5mm;font-size:8pt;margin:0 1mm 1mm 0}.flow{display:flex;gap:2mm;align-items:stretch;margin:5mm 0}.node{flex:1;border:.4mm solid #b9cbd2;border-radius:2mm;padding:3mm 2.5mm;background:#fff;min-height:24mm}.node strong{display:block;color:#0e2936;margin-bottom:1mm}.arrow{display:grid;place-items:center;color:#00a8a8;font-weight:bold;font-size:16pt}.lane{border-left:1mm solid #c8d6dc;padding-left:4mm;margin:4mm 0 0 2mm}.step{margin-bottom:3.5mm}.step b{color:#008b8b}.tbl{width:100%;border-collapse:collapse;margin:3mm 0 5mm;font-size:8.9pt}.tbl th{text-align:left;background:#103340;color:#fff;padding:2.4mm}.tbl td{border-bottom:.3mm solid #d9e4e8;padding:2.2mm;vertical-align:top}.tbl tr:nth-child(even) td{background:#f5f9fa}.check{display:grid;grid-template-columns:15mm 1fr;gap:2mm;margin-bottom:3mm}.check .box{font-weight:bold;color:#008b8b}.source-list{font-size:8.4pt;line-height:1.35}.source-list li{margin-bottom:2.1mm}.source-list a{color:#006b78;text-decoration:none;word-break:break-word}.diagram-note{font-size:8pt;color:#607783;text-align:center;margin-top:2mm}.radar-wrap{display:grid;grid-template-columns:72mm 1fr;gap:7mm;align-items:center}.radar{width:68mm;height:68mm;border:1mm solid #0aa5a5;border-radius:50%;position:relative;background:repeating-radial-gradient(circle,#f7ffff 0,#f7ffff 12mm,#d9eeee 12.3mm,#d9eeee 12.7mm);overflow:hidden}.radar:before,.radar:after{content:"";position:absolute;background:#9bc9ce}.radar:before{height:.35mm;left:0;right:0;top:50%}.radar:after{width:.35mm;top:0;bottom:0;left:50%}.victim{position:absolute;left:42mm;top:17mm;width:7mm;height:7mm;border-radius:50%;background:#e94f59;border:1mm solid #fff;box-shadow:0 0 0 1mm rgba(233,79,89,.2)}.unit{position:absolute;left:29mm;top:29mm;width:9mm;height:9mm;background:#0e2936;transform:rotate(45deg);border:1mm solid #fff}.metric{border-bottom:.3mm solid #d7e3e8;padding:2.2mm 0}.metric b{font-size:13pt;color:#0e2936}.tag{font-size:8.1pt;padding:.8mm 2mm;border-radius:20px;background:#e7f7f5;color:#007979;font-weight:bold}.note{font-size:8.3pt;color:#607783}
+</style></head><body>
+<section class="page cover">
+<div class="topline"></div><div class="mark">UNITED</div>
+<div class="kicker" style="color:#64e0d4">Concept and pilot proposal</div>
+<h1>Responder Proximity System</h1>
+<div class="sub">A secure, in-vehicle view that shows an assigned first responder how close they are to the person who needs help - without exposing responder locations to the public.</div>
+<div class="rule"></div>
+<p style="max-width:145mm;color:#d5e8ec">Designed as a CAD/AVL and RapidSOS integration for emergency communications centers, agencies, and field responders.</p>
+<div class="meta"><b>Prepared for:</b> RapidSOS partnership discussion<br><b>Product:</b> UNITED by Cybersymantics<br><b>Date:</b> September 23, 2026 &nbsp; | &nbsp; Discussion draft v1.0</div>
+</section>
+
+<section class="page"><div class="topline"></div><div class="header"><span>UNITED RESPONDER PROXIMITY SYSTEM</span><span>EXECUTIVE BRIEF</span></div>
+<div class="kicker">The decision</div><h2>Build the view inside the dispatch chain</h2>
+<p class="lead">The concept is feasible, but it should not be a public “radar.” It should be an assignment-scoped proximity layer connected to the agency's computer-aided dispatch (CAD) and automatic vehicle location (AVL) systems.</p>
+<div class="grid3">
+<div class="card"><div class="num">01</div><h3>Victim location</h3><p>UNITED sends the emergency location, accuracy, timestamp, and incident context into an approved emergency-data pathway.</p></div>
+<div class="card"><div class="num">02</div><h3>Responder location</h3><p>The agency's AVL feed supplies the assigned vehicle's trusted GPS position. UNITED never publishes fleet locations.</p></div>
+<div class="card"><div class="num">03</div><h3>Proximity view</h3><p>The vehicle mobile data terminal (MDT) receives road distance, estimated time of arrival (ETA), direction, and data-freshness warnings.</p></div>
+</div>
+<div class="callout"><b>Recommended product definition:</b> “UNITED Responder Proximity” is a field-responder interface and integration service. It supplements existing CAD navigation; it does not dispatch units, replace 9-1-1, or expose responders on a consumer map.</div>
+<h3>Why this architecture fits public safety</h3>
+<ul>
+<li>RapidSOS describes integrations that place emergency data inside existing CAD, call-handling, mapping, and field-responder workflows.</li>
+<li>National 911 guidance defines Next Generation 9-1-1 (NG911) as a secure, open-standards system that delivers emergency data to appropriate agencies and interoperates with first-responder networks.</li>
+<li>APCO's CAD procurement guidance expects unit GPS, calls, and officer locations to be plotted together so dispatchers can assign the closest appropriate unit.</li>
+</ul>
+<div class="grid2">
+<div class="card dark"><h3>The first ask</h3><p>Request a RapidSOS technical discovery session, data-partner pathway, sandbox access, and introductions to one participating CAD/field-responder integration partner.</p></div>
+<div class="card"><h3>The first pilot</h3><p>One agency, one dispatch center, one CAD vendor, and a small vehicle set in shadow mode before live operational use.</p></div>
+</div>
+<div class="footer"><span>Discussion draft - not an operational system</span><span>2</span></div></section>
+<section class="page"><div class="topline"></div><div class="header"><span>UNITED RESPONDER PROXIMITY SYSTEM</span><span>OPERATIONAL CONCEPT</span></div>
+<div class="kicker">What happens during an alert</div><h2>CAD remains the source of truth</h2>
+<p class="lead">UNITED contributes incident-side data. The emergency communications center validates and dispatches. The assigned vehicle sees only the information needed to reach the incident safely.</p>
+<div class="lane">
+<div class="step"><b>1. Person initiates UNITED.</b> The consumer experience may recognize the phrase “Stay Calm” or a manual emergency action, but confirmation and local emergency procedures govern transmission.</div>
+<div class="step"><b>2. UNITED forms an incident package.</b> It includes a unique incident ID, location, horizontal accuracy, timestamp, movement state, callback/contact channel, and the minimum relevant context.</div>
+<div class="step"><b>3. Approved intake reaches the emergency communications center.</b> RapidSOS Digital Alerts or another approved channel places the event into an operator workflow; local policy determines acceptance and handling.</div>
+<div class="step"><b>4. CAD creates or links the call.</b> The dispatcher validates the incident, assigns the appropriate unit, and remains authoritative for status, priority, cancellation, and reassignment.</div>
+<div class="step"><b>5. The assigned vehicle receives proximity guidance.</b> A CAD extension or MDT app combines the incident position with the vehicle's AVL position and a routing engine.</div>
+<div class="step"><b>6. The view closes automatically.</b> Access ends when the assignment is cancelled, transferred, cleared, or expires under agency policy.</div>
+</div>
+<h3>Information shown to an assigned crew</h3>
+<div class="grid2">
+<div class="card"><ul class="tight"><li><b>Incident pin:</b> coordinates plus accuracy radius</li><li><b>Road distance:</b> route-based, not straight-line only</li><li><b>ETA:</b> identified as an estimate</li><li><b>Direction:</b> next turn or bearing</li></ul></div>
+<div class="card"><ul class="tight"><li><b>Freshness:</b> age of victim and AVL fixes</li><li><b>Movement:</b> stationary, moving, or unknown</li><li><b>Assignment:</b> dispatched, en route, arrived, cleared</li><li><b>Hazards:</b> only dispatcher-approved notes</li></ul></div>
+</div>
+<div class="callout warning"><b>Operational boundary:</b> The vehicle view never self-dispatches, selects a unit, promises an arrival time to the victim, or bypasses the dispatcher. If any location is stale or uncertain, it says so plainly and falls back to the CAD location.</div>
+<div class="footer"><span>Concept of operations</span><span>3</span></div></section>
+
+<section class="page"><div class="topline"></div><div class="header"><span>UNITED RESPONDER PROXIMITY SYSTEM</span><span>REFERENCE ARCHITECTURE</span></div>
+<div class="kicker">End-to-end design</div><h2>Join five trusted systems; create no public feed</h2>
+<p class="lead">The design uses agency and partner systems already responsible for emergency intake, dispatch, fleet location, and field delivery.</p>
+<div class="flow"><div class="node"><strong>UNITED alert</strong>Incident ID<br>victim fix<br>accuracy + time</div><div class="arrow">›</div><div class="node"><strong>RapidSOS / approved intake</strong>authentication<br>normalization<br>routing</div><div class="arrow">›</div><div class="node"><strong>ECC + CAD</strong>validation<br>incident record<br>unit assignment</div></div>
+<div class="flow"><div class="node"><strong>Agency AVL</strong>vehicle fix<br>speed/heading<br>fix age</div><div class="arrow">›</div><div class="node"><strong>Incident broker</strong>assignment check<br>route/ETA<br>audit + policy</div><div class="arrow">›</div><div class="node"><strong>Vehicle MDT</strong>proximity view<br>navigation handoff<br>safe degradation</div></div>
+<p class="diagram-note">Proposed logical flow. Final interface placement depends on RapidSOS, the agency, and the selected CAD/MDT vendor.</p>
+<h3>Component responsibilities</h3>
+<table class="tbl"><thead><tr><th>Component</th><th>Owns</th><th>Must not own</th></tr></thead><tbody>
+<tr><td>UNITED</td><td>Alert-side data and consent</td><td>Dispatch decisions</td></tr>
+<tr><td>RapidSOS / intake</td><td>Approved emergency-data delivery</td><td>Public responder tracking</td></tr>
+<tr><td>ECC / CAD</td><td>Validation, assignment, status</td><td>Consumer app behavior</td></tr>
+<tr><td>Agency AVL</td><td>Trusted vehicle position</td><td>Victim data</td></tr>
+<tr><td>Incident broker</td><td>Authorization, correlation, metrics</td><td>Permanent fleet history</td></tr>
+<tr><td>MDT client</td><td>Glanceable assigned-incident view</td><td>Independent dispatch</td></tr>
+</tbody></table>
+<h3>Preferred deployment choices</h3>
+<p><span class="pill">CAD-native pane</span><span class="pill">MDT deep link</span><span class="pill">Agency SSO</span><span class="pill">Managed device</span><span class="pill">FirstNet-capable transport</span><span class="pill">Offline-safe map cache</span></p>
+<div class="footer"><span>Reference architecture</span><span>4</span></div></section>
+<section class="page"><div class="topline"></div><div class="header"><span>UNITED RESPONDER PROXIMITY SYSTEM</span><span>IN-VEHICLE EXPERIENCE</span></div>
+<div class="kicker">Illustrative screen - not live data</div><h2>Call it proximity, not radar</h2>
+<p class="lead">“Radar” is a useful visual metaphor, but the system calculates proximity from GPS/AVL and routing data. The interface should say exactly what the data means.</p>
+<div class="radar-wrap"><div class="radar"><div class="unit"></div><div class="victim"></div></div><div>
+<div class="label">Assigned incident</div><h3 style="font-size:17pt;margin:1mm 0 4mm">Medical assistance</h3>
+<div class="metric"><span class="label">Road distance</span><br><b>1.8 mi</b> <span class="tag">illustrative</span></div>
+<div class="metric"><span class="label">Estimated arrival</span><br><b>4 min</b> <span class="small">traffic-adjusted</span></div>
+<div class="metric"><span class="label">Victim fix</span><br><b>8 sec old</b> <span class="small">± 18 m</span></div>
+<div class="metric"><span class="label">Vehicle fix</span><br><b>3 sec old</b></div>
+</div></div>
+<p class="diagram-note">Dark diamond: assigned unit. Red point: incident. Rings: relative distance bands, not radio detection.</p>
+<div class="grid2" style="margin-top:5mm">
+<div class="card"><h3>Moving mode</h3><ul class="tight"><li>Map, distance, ETA, next turn, alert age</li><li>No scrolling narrative or manual data entry</li><li>Large targets; optional spoken updates</li><li>All nonessential detail locked while moving</li></ul></div>
+<div class="card"><h3>Stopped mode</h3><ul class="tight"><li>Full incident notes and contact workflow</li><li>Accuracy history and location-source detail</li><li>Floor/entrance data when available</li><li>Supervisor and dispatcher actions</li></ul></div>
+</div>
+<div class="callout warning"><b>Safety rule:</b> Set the destination automatically from CAD. The driver should not type an address or manage the incident while moving. A passenger or dispatcher handles deeper interaction.</div>
+<div class="footer"><span>Human factors concept</span><span>5</span></div></section>
+
+<section class="page"><div class="topline"></div><div class="header"><span>UNITED RESPONDER PROXIMITY SYSTEM</span><span>DATA CONTRACT</span></div>
+<div class="kicker">Minimum trustworthy exchange</div><h2>Every location needs identity, accuracy, and age</h2>
+<table class="tbl"><thead><tr><th>Object</th><th>Required fields</th><th>Rule</th></tr></thead><tbody>
+<tr><td>Incident</td><td>incident_id, source_id, type, priority, state</td><td>CAD ID linked after acceptance</td></tr>
+<tr><td>Victim fix</td><td>lat, lon, accuracy_m, observed_at, source</td><td>Never display an unaged point</td></tr>
+<tr><td>Vehicle fix</td><td>unit_id, lat, lon, heading, observed_at</td><td>Agency AVL only</td></tr>
+<tr><td>Assignment</td><td>incident_id, unit_id, status, assigned_at</td><td>Required before field access</td></tr>
+<tr><td>Route result</td><td>road_distance, ETA, calculated_at, provider</td><td>Clearly marked as estimate</td></tr>
+<tr><td>Audit event</td><td>actor, device, action, time, outcome</td><td>Append-only trail</td></tr>
+</tbody></table>
+<h3>Event lifecycle</h3>
+<div class="flow" style="font-size:8.3pt"><div class="node"><strong>Received</strong>Alert authenticated</div><div class="arrow">›</div><div class="node"><strong>Validated</strong>ECC accepts</div><div class="arrow">›</div><div class="node"><strong>Assigned</strong>CAD links unit</div><div class="arrow">›</div><div class="node"><strong>En route</strong>View active</div><div class="arrow">›</div><div class="node"><strong>Closed</strong>Access revoked</div></div>
+<h3>Interoperability posture</h3>
+<ul>
+<li><b>Map local CAD fields to a neutral internal model.</b> Support vendor adapters rather than hard-coding one CAD.</li>
+<li><b>Align incident exchange with public-safety standards.</b> APCO/NENA's Emergency Incident Data Document (EIDD) is an established XML/NIEM model; later NENA i3 material also defines a JSON-based Emergency Incident Data Object (EIDO).</li>
+<li><b>Use common status semantics.</b> Normalize assigned, acknowledged, en route, arrived, cancelled, and cleared across vendors.</li>
+<li><b>Prefer event delivery over repeated polling.</b> Signed webhooks or managed message queues reduce delay and provide auditable delivery.</li>
+</ul>
+<div class="callout"><b>Location policy:</b> Show the best authorized fix, its source, its age, and its uncertainty. When fixes disagree, do not silently blend them; elevate the discrepancy to dispatch.</div>
+<div class="footer"><span>Integration requirements</span><span>6</span></div></section>
+<section class="page"><div class="topline"></div><div class="header"><span>UNITED RESPONDER PROXIMITY SYSTEM</span><span>SECURITY AND GOVERNANCE</span></div>
+<div class="kicker">Non-negotiable controls</div><h2>Responder location stays inside the agency</h2>
+<p class="lead">The system processes sensitive victim and fleet location. Access must follow the assignment, not curiosity, proximity, or possession of a link.</p>
+<div class="grid2">
+<div class="card"><h3>Identity and access</h3><ul class="tight"><li>Agency single sign-on and multifactor authentication</li><li>Managed, registered vehicle devices</li><li>Role- and assignment-based access</li><li>Short-lived tokens; automatic revocation</li><li>No consumer access to vehicle coordinates</li></ul></div>
+<div class="card"><h3>Data protection</h3><ul class="tight"><li>Encryption in transit and at rest</li><li>Per-agency tenant separation</li><li>No sensitive data in URLs or push previews</li><li>Minimal local cache with remote wipe</li><li>Configurable retention and legal hold</li></ul></div>
+<div class="card"><h3>Operational resilience</h3><ul class="tight"><li>CAD remains authoritative</li><li>Visible stale-data and outage states</li><li>Last-known fix never shown as current</li><li>Redundant transport where the agency permits</li><li>Graceful fall back to radio/CAD workflow</li></ul></div>
+<div class="card"><h3>Oversight</h3><ul class="tight"><li>Immutable access and change logs</li><li>Supervisor review and export</li><li>Incident-bound analytics, de-identified by default</li><li>Security testing before production</li><li>Breach, outage, and misuse response playbooks</li></ul></div>
+</div>
+<h3 style="margin-top:5mm">Required governance decisions before live use</h3>
+<table class="tbl"><thead><tr><th>Decision</th><th>Owner</th><th>Evidence</th></tr></thead><tbody>
+<tr><td>Who may view victim location?</td><td>Agency</td><td>Role/assignment policy</td></tr>
+<tr><td>How long are fixes retained?</td><td>Agency counsel</td><td>Retention schedule</td></tr>
+<tr><td>What data is CJI or PHI?</td><td>Agency + counsel</td><td>Classification review</td></tr>
+<tr><td>What happens on mismatch?</td><td>ECC operations</td><td>Written SOP</td></tr>
+<tr><td>Who may share across agencies?</td><td>Jurisdiction leaders</td><td>Agreement + audit</td></tr>
+</tbody></table>
+<p class="note">CJIS obligations depend on the deployed data and agency use. Treat compliance as an agency-led determination, not a product label.</p>
+<div class="footer"><span>Privacy, security, and policy</span><span>7</span></div></section>
+
+<section class="page"><div class="topline"></div><div class="header"><span>UNITED RESPONDER PROXIMITY SYSTEM</span><span>PILOT PLAN</span></div>
+<div class="kicker">Phased delivery</div><h2>Prove the workflow before anyone relies on it</h2>
+<div class="grid2">
+<div class="card"><span class="label">Phase 0 - discovery</span><h3>Confirm the doors</h3><p>Document one agency's CAD, AVL, MDT, mapping, identity, network, records, and operating procedures. Agree who owns every interface.</p><p class="small"><b>Exit:</b> signed architecture and data-flow decision.</p></div>
+<div class="card"><span class="label">Phase 1 - sandbox</span><h3>Build with synthetic incidents</h3><p>Connect a UNITED test event to a non-production broker and vehicle emulator. Implement identity, event state, route/ETA, freshness, and audit.</p><p class="small"><b>Exit:</b> replayable end-to-end tests.</p></div>
+<div class="card"><span class="label">Phase 2 - shadow mode</span><h3>Observe, do not guide</h3><p>Mirror selected training or approved incidents. Compare the proposed view with CAD and radio outcomes; field users do not depend on it.</p><p class="small"><b>Exit:</b> agency-approved safety and accuracy report.</p></div>
+<div class="card"><span class="label">Phase 3 - controlled operations</span><h3>Limit scope tightly</h3><p>Enable a small trained cohort, one incident class, and defined hours with dispatch oversight and an immediate kill switch.</p><p class="small"><b>Exit:</b> formal operational acceptance.</p></div>
+</div>
+<h3 style="margin-top:5mm">Pilot team</h3>
+<p><span class="pill">RapidSOS technical partner</span><span class="pill">ECC operations lead</span><span class="pill">CAD/AVL vendor</span><span class="pill">Agency GIS</span><span class="pill">Security/CJIS officer</span><span class="pill">Field responder lead</span><span class="pill">UNITED engineering</span></p>
+<h3 style="margin-top:4mm">Planning assumptions</h3>
+<ul class="tight"><li>A single-jurisdiction pilot is the fastest credible path.</li><li>Sandbox and shadow-mode access precede production credentials.</li><li>The agency provides approved test incidents and fleet-location access.</li><li>Schedule and cost are estimated only after interface discovery; no fixed dates or prices are asserted here.</li></ul>
+<div class="callout warning"><b>Stop conditions:</b> any unauthorized location exposure, assignment mismatch, unexplained stale fix, unsafe driver interaction, or inability to revoke access ends the pilot until corrected.</div>
+<div class="footer"><span>Implementation roadmap</span><span>8</span></div></section>
+<section class="page compact"><div class="topline"></div><div class="header"><span>UNITED RESPONDER PROXIMITY SYSTEM</span><span>ACCEPTANCE PLAN</span></div>
+<div class="kicker">Evidence before launch</div><h2>Measure safety and integrity, not just screen speed</h2>
+<table class="tbl"><thead><tr><th>Test area</th><th>Pass evidence</th><th>Failure response</th></tr></thead><tbody>
+<tr><td>Incident correlation</td><td>No cross-incident or cross-unit display in the test set</td><td>Block release; trace ID mapping</td></tr>
+<tr><td>Location freshness</td><td>Age and accuracy shown for every fix</td><td>Suppress guidance; fall back to CAD</td></tr>
+<tr><td>Assignment control</td><td>Only assigned, authenticated units receive details</td><td>Revoke tokens; security review</td></tr>
+<tr><td>Status synchronization</td><td>Cancel, reassign, arrive, and clear propagate correctly</td><td>Hide view; alert dispatch</td></tr>
+<tr><td>Network loss</td><td>Offline/stale state is unmistakable; no false current fix</td><td>CAD/radio workflow continues</td></tr>
+<tr><td>Driver usability</td><td>Core guidance readable at a glance; no moving-mode typing</td><td>Simplify interface and retest</td></tr>
+<tr><td>Auditability</td><td>Every view and location update attributable and time-stamped</td><td>Reject pilot evidence</td></tr>
+<tr><td>Resilience</td><td>Documented recovery and kill-switch exercise succeeds</td><td>Return to shadow mode</td></tr>
+</tbody></table>
+<h3>Metrics to agree with the pilot agency</h3>
+<div class="grid2">
+<div class="card"><h3>Technical</h3><ul class="tight"><li>End-to-end alert latency distribution</li><li>Victim and vehicle fix age</li><li>Route/ETA calculation success</li><li>Availability and recovery time</li><li>Event delivery and correlation errors</li></ul></div>
+<div class="card"><h3>Operational</h3><ul class="tight"><li>Dispatcher corrections required</li><li>Wrong-entrance or wrong-pin events</li><li>Field-user comprehension</li><li>Driver-distraction observations</li><li>Time from assignment to arrival</li></ul></div>
+</div>
+<div class="callout"><b>Evaluation principle:</b> Do not claim improved response time from a small pilot alone. First demonstrate that the system is accurate, usable, secure, and does not disrupt dispatch. Any outcome claim needs an agency-approved study design and baseline.</div>
+<h3>Release checklist</h3>
+<div class="grid2 small"><div>
+<div class="check"><span class="box">[ ]</span><span>Data-sharing agreement approved</span></div><div class="check"><span class="box">[ ]</span><span>Threat model and penetration test complete</span></div><div class="check"><span class="box">[ ]</span><span>Dispatcher and responder training complete</span></div></div><div>
+<div class="check"><span class="box">[ ]</span><span>Retention and records policies configured</span></div><div class="check"><span class="box">[ ]</span><span>Fallback and kill switch exercised</span></div><div class="check"><span class="box">[ ]</span><span>Agency signs operational acceptance</span></div></div></div>
+<div class="footer"><span>Verification and acceptance</span><span>9</span></div></section>
+
+<section class="page"><div class="topline"></div><div class="header"><span>UNITED RESPONDER PROXIMITY SYSTEM</span><span>RAPIDSOS DISCUSSION</span></div>
+<div class="kicker">Proposed partnership conversation</div><h2>Ask for the integration path, not fleet access</h2>
+<p class="lead">UNITED is seeking a route to deliver trusted incident-side data into public-safety workflows and pair it, under agency control, with the assigned unit's existing AVL data.</p>
+<div class="card dark"><h3>One-sentence proposal</h3><p>Partner with UNITED, one emergency communications center, and one CAD/field-responder vendor to test an assignment-scoped in-vehicle view of victim proximity, road distance, ETA, accuracy, and data freshness.</p></div>
+<h3 style="margin-top:5mm">Requested from RapidSOS</h3>
+<ol>
+<li><b>Technical discovery:</b> identify the correct product and partner pathway for UNITED-generated emergency data.</li>
+<li><b>Sandbox:</b> provide non-production documentation, credentials, sample payloads, and test procedures under RapidSOS terms.</li>
+<li><b>Integration guidance:</b> confirm how incident IDs, location updates, cancellations, and field-responder delivery should be represented.</li>
+<li><b>Ecosystem introduction:</b> identify a willing CAD/MDT partner and candidate public-safety agency for a limited pilot.</li>
+<li><b>Certification path:</b> define security, reliability, support, and validation gates for any “RapidSOS Ready” or partner designation.</li>
+</ol>
+<h3>Questions for the meeting</h3>
+<ul class="tight">
+<li>Which RapidSOS product receives an app-originated emergency event with updated location?</li>
+<li>Can that event be linked to a CAD incident and exposed to an assigned field unit through an existing integration?</li>
+<li>Which party should calculate road distance and ETA: CAD, field app, mapping partner, or UNITED?</li>
+<li>What data may be retained, and what must be deleted when the incident closes?</li>
+<li>What sandbox, test PSAP/ECC, and certification resources are available?</li>
+<li>Which security, uptime, support, and incident-response commitments are required?</li>
+</ul>
+<div class="callout warning"><b>Not requested:</b> a public API showing responder locations; permission for UNITED to choose or dispatch units; production access before agency approval; or replacement of CAD, radio, 9-1-1 call handling, or responder navigation.</div>
+<div class="footer"><span>Meeting brief</span><span>10</span></div></section>
+<section class="page"><div class="topline"></div><div class="header"><span>UNITED RESPONDER PROXIMITY SYSTEM</span><span>NEXT ACTIONS</span></div>
+<div class="kicker">What to prepare</div><h2>A credible pilot starts with six artifacts</h2>
+<div class="grid2">
+<div class="card"><div class="num">1</div><h3>Product demonstration</h3><p>Show UNITED creating a test incident, including the “Stay Calm” trigger path, confirmation gate, location, accuracy, timestamp, and cancellation behavior.</p></div>
+<div class="card"><div class="num">2</div><h3>Data dictionary</h3><p>List every field UNITED can send, where it comes from, how often it updates, and how missing or stale values are represented.</p></div>
+<div class="card"><div class="num">3</div><h3>Threat model</h3><p>Document spoofing, replay, account takeover, unauthorized tracking, wrong-incident linking, device loss, and denial-of-service controls.</p></div>
+<div class="card"><div class="num">4</div><h3>Integration adapter</h3><p>Build the neutral incident model and a sandbox adapter. Keep CAD- and RapidSOS-specific code behind defined interfaces.</p></div>
+<div class="card"><div class="num">5</div><h3>Vehicle prototype</h3><p>Deliver a managed-tablet prototype that consumes only synthetic or agency-approved test data and demonstrates stale-data behavior.</p></div>
+<div class="card"><div class="num">6</div><h3>Pilot packet</h3><p>Include the concept of operations, architecture, test plan, privacy assessment, training outline, support plan, and stop conditions.</p></div>
+</div>
+<div class="callout" style="margin-top:7mm"><b>Sequence:</b> demonstrate the alert and data first; agree the partner pathway second; build the field prototype only after the agency and CAD/MDT interfaces are known.</div>
+<div class="footer"><span>Pilot preparation</span><span>11</span></div></section>
+
+<section class="page"><div class="topline"></div><div class="header"><span>UNITED RESPONDER PROXIMITY SYSTEM</span><span>MEETING AGENDA</span></div>
+<div class="kicker">A focused first conversation</div><h2>Use 30 minutes to identify the real integration path</h2>
+<p class="lead">The goal of the first meeting is not approval to go live. It is to identify the right RapidSOS product team, interface, sandbox, CAD partner, and public-safety pilot owner.</p>
+<table class="tbl"><thead><tr><th>Time</th><th>Topic</th><th>Outcome</th></tr></thead><tbody>
+<tr><td>0-5 min</td><td>Problem and demo</td><td>Shared use case</td></tr>
+<tr><td>5-12 min</td><td>Proposed data flow</td><td>Correct product path</td></tr>
+<tr><td>12-20 min</td><td>CAD/AVL and field delivery</td><td>Partner dependency map</td></tr>
+<tr><td>20-26 min</td><td>Security and pilot controls</td><td>Gate expectations</td></tr>
+<tr><td>26-30 min</td><td>Owners and next step</td><td>Named follow-up</td></tr>
+</tbody></table>
+<div class="grid2">
+<div class="card"><h3>Bring</h3><ul class="tight"><li>Two-minute UNITED demo</li><li>One-page data dictionary</li><li>This architecture diagram</li><li>Named technical contact</li></ul></div>
+<div class="card"><h3>Leave with</h3><ul class="tight"><li>Correct integration channel</li><li>Sandbox owner and requirements</li><li>CAD/field partner candidate</li><li>Date and owner for next step</li></ul></div>
+</div>
+<div class="callout"><b>Recommended close:</b> “Can we schedule a technical session with the RapidSOS team that handles app-originated emergency data and field-responder/CAD integrations, then identify one sandbox and one potential pilot partner?”</div>
+<div class="footer"><span>RapidSOS discussion agenda</span><span>12</span></div></section>
+
+<section class="page"><div class="topline"></div><div class="header"><span>UNITED RESPONDER PROXIMITY SYSTEM</span><span>SOURCES AND NOTES</span></div>
+<div class="kicker">Grounding</div><h2>Public sources informing this plan</h2>
+<ol class="source-list">
+<li><b>RapidSOS - Public Safety Software Partners.</b> Describes integration with CAD, dispatching, call handling, mapping, accurate positioning, logging, and systems of record. <a href="https://rapidsos.com/public-safety-partners/">https://rapidsos.com/public-safety-partners/</a></li>
+<li><b>RapidSOS - Digital Alerts.</b> Describes standardized digital incident data delivered into RapidSOS UNITE from connected devices and systems. <a href="https://rapidsos.com/unite-digital-alerts/">https://rapidsos.com/unite-digital-alerts/</a></li>
+<li><b>National 911 Program - NG911 Interstate Playbook, Chapter 2.</b> Defines NG911 as secure, IP-based, open-standards infrastructure supporting added data and first-responder interoperability; recommends phased implementation. <a href="https://www.911.gov/assets/National_911_Program_NG911_Interstate_Playbook_Chapter-2.pdf">https://www.911.gov/assets/National_911_Program_NG911_Interstate_Playbook_Chapter-2.pdf</a></li>
+<li><b>APCO sample RFP guidance hosted by 911.gov.</b> Includes CAD mapping and AVL requirements for plotting fleet units, incidents, and officer locations. <a href="https://www.911.gov/assets/2020-APCO-RFP-Template-Guidance.pdf">https://www.911.gov/assets/2020-APCO-RFP-Template-Guidance.pdf</a></li>
+<li><b>APCO/NENA Emergency Incident Data Document.</b> Describes an industry-neutral, NIEM-conformant exchange for emergency incident information. <a href="https://www.apcointl.org/standards/2-105-1-2017-nena-apco-ng9-1-1-emergency-incident-data-document-eidd/">https://www.apcointl.org/standards/2-105-1-2017-nena-apco-ng9-1-1-emergency-incident-data-document-eidd/</a></li>
+<li><b>FirstNet Authority - Situational Awareness Roadmap.</b> Identifies location services and mapping/GIS integration for people, vehicles, assets, incidents, traffic, and hazards as core public-safety needs. <a href="https://www.firstnet.gov/sites/default/files/FirstNet Authority Roadmap Situational Awareness.pdf">https://www.firstnet.gov/sites/default/files/FirstNet Authority Roadmap Situational Awareness.pdf</a></li>
+<li><b>FBI - CJIS Security Policy v5.9.5.</b> Provides controls relevant to mobile devices, authentication, encryption, and managed access. Agencies must determine current applicable requirements. <a href="https://le.fbi.gov/file-repository/cjis_security_policy_v5-9-5_20240709.pdf">https://le.fbi.gov/file-repository/cjis_security_policy_v5-9-5_20240709.pdf</a></li>
+<li><b>U.S. Department of Transportation - driver-distraction guidance.</b> Highlights limiting manual entry and visual-manual tasks in moving vehicles. <a href="https://www.transportation.gov/briefing-room/us-department-transportation-proposes-%E2%80%98distraction%E2%80%99-guidelines-automakers">https://www.transportation.gov/briefing-room/us-department-transportation-proposes-%E2%80%98distraction%E2%80%99-guidelines-automakers</a></li>
+</ol>
+<div class="callout warning"><b>Important limitation:</b> This is a concept and pilot proposal, not an assertion that RapidSOS exposes responder AVL data or has approved UNITED. The production design depends on RapidSOS, an emergency communications center, the agency, and its CAD/AVL/MDT vendors.</div>
+<p class="note">Terminology: ECC = emergency communications center; PSAP = public safety answering point; CAD = computer-aided dispatch; AVL = automatic vehicle location; MDT = mobile data terminal; GIS = geographic information system.</p>
+<div class="footer"><span>Sources accessed September 23, 2026</span><span>13</span></div></section>
+</body></html>
