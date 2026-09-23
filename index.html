@@ -156,6 +156,9 @@
     <div id="ownerDeviceState" style="margin:6px 0;color:var(--muted);font-size:.78rem"></div>
     <label class="switch"><input id="chargeSwitch" type="checkbox"> Start annual charge ($5/year)</label>
     <div id="chargeState" style="margin-top:8px;color:var(--muted)">Charging is OFF — app is free.</div>
+    <div style="margin-top:12px"></div>
+    <label class="switch"><input id="emsTestSwitch" type="checkbox"> EMS mode preview (UI test only)</label>
+    <div id="emsTestState" style="margin-top:6px;color:var(--muted)">EMS preview OFF — app is in TEST mode.</div>
   </div>
 
   <!-- SUBSCRIBER UI: appears only when owner turns charging ON -->
@@ -286,6 +289,21 @@
       else localStorage.removeItem(CHARGE_KEY);
       syncChargeUI();
     });
+    $('emsTestSwitch').addEventListener('change', e => {
+      setEmsEnabledLocally(e.target.checked);
+      syncEmsTestUI();
+    });
+    syncEmsTestUI();
+  }
+
+  function syncEmsTestUI() {
+    const on = isEmsEnabledLocally();
+    const sw = $('emsTestSwitch');
+    if (sw) sw.checked = on;
+    const st = $('emsTestState');
+    if (st) st.textContent = on
+      ? 'EMS preview ON — label shows EMS (LIVE). Safe: RapidSOS is not linked, so alerts cannot dispatch.'
+      : 'EMS preview OFF — app is in TEST mode.';
   }
 
   function syncChargeUI() {
@@ -632,7 +650,7 @@
     initSubscribe();
     initLegal();
     initPoll();
-    syncChargeUI();
+    syncChargeUI(); syncEmsTestUI();
     const bt = $('buildTag'); if (bt) bt.textContent = BUILD_TAG;
     warmupGPS();
     startListening();
