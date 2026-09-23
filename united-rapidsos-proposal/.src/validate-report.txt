@@ -1,0 +1,21 @@
+OK: required commands found
+OK: input files found
+OK: prepared validation output directory: /home/hatch/workspace/goals/united-emergency-alert-app/files/united-rapidsos-proposal/.src/validate
+size=235975 bytes
+Pages:           9
+Page size:       612 x 792 pts (letter)
+OK: PDF integrity and metadata look valid
+imgs=0 data-uri-srcs=0
+css-urls=0 css-data-uris=0
+OK: HTML image references are embedded
+/home/hatch/workspace/goals/united-emergency-alert-app/files/united-rapidsos-proposal/.src/validate/page-1.png 126460 bytes
+/home/hatch/workspace/goals/united-emergency-alert-app/files/united-rapidsos-proposal/.src/validate/page-2.png 321073 bytes
+/home/hatch/workspace/goals/united-emergency-alert-app/files/united-rapidsos-proposal/.src/validate/page-3.png 292937 bytes
+/home/hatch/workspace/goals/united-emergency-alert-app/files/united-rapidsos-proposal/.src/validate/page-4.png 298842 bytes
+/home/hatch/workspace/goals/united-emergency-alert-app/files/united-rapidsos-proposal/.src/validate/page-5.png 294455 bytes
+/home/hatch/workspace/goals/united-emergency-alert-app/files/united-rapidsos-proposal/.src/validate/page-6.png 315370 bytes
+/home/hatch/workspace/goals/united-emergency-alert-app/files/united-rapidsos-proposal/.src/validate/page-7.png 268193 bytes
+/home/hatch/workspace/goals/united-emergency-alert-app/files/united-rapidsos-proposal/.src/validate/page-8.png 298258 bytes
+/home/hatch/workspace/goals/united-emergency-alert-app/files/united-rapidsos-proposal/.src/validate/page-9.png 286945 bytes
+OK: rendered 9 validation PNG(s) from the PDF
+PASS: mechanical PDF validation complete; inspect rendered PNGs before returning the artifact.
