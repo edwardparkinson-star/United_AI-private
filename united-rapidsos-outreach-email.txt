@@ -1,0 +1,18 @@
+Subject: Partnership inquiry — voice-triggered emergency alert app (UNITED)
+
+Hello RapidSOS partnerships team,
+
+My name is Edward Parkinson, an independent developer. I built UNITED, a voice-triggered emergency alert web app designed for moments when someone can't reach their phone or speak.
+
+How it works: the user says "ALERT" (or taps EMERGENCY). The app discreetly records audio, captures GPS location, plays calm reassurance messages, and — after an on-screen confirm step — sends the alert with location data to EMS. A spoken deactivation phrase ("help has arrived") stands it down when responders arrive. It's currently running in TEST mode; you can try it here:
+https://edwardparkinson-star.github.io/United_AI/
+
+I'm writing because there's no path for an independent developer to route alert data into 911 directly, and your Emergency API is built exactly for this — linking app-triggered incidents with location data to 911 through a single API call. I'd like to apply for partnership / API access so UNITED can deliver real alerts with GPS coordinates to the right 911 center.
+
+I'm happy to do a live demo, share the codebase, or start in a sandbox. What are the next steps on your end?
+
+Thank you for the work you do getting data to first responders.
+
+Edward "The WOLF" Parkinson
+713-380-1196
+https://edwardparkinson-star.github.io/United_AI/
