@@ -1,0 +1,17 @@
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Secrets — never commit tokens, keys, or env files
+.env
+.env.*
+*.pem
+*.key
+
+# Logs
+*.log
+
+# Editor / tooling
+.vscode/
+*.swp
+node_modules/
