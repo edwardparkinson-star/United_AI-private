@@ -159,6 +159,8 @@
     <div style="margin-top:12px"></div>
     <label class="switch"><input id="emsTestSwitch" type="checkbox"> EMS mode preview (UI test only)</label>
     <div id="emsTestState" style="margin-top:6px;color:var(--muted)">EMS preview OFF — app is in TEST mode.</div>
+    <div style="margin-top:12px"></div>
+    <button id="resetVoteBtn" class="muted">Reset my poll vote (this device)</button>
   </div>
 
   <!-- SUBSCRIBER UI: appears only when owner turns charging ON -->
@@ -294,6 +296,12 @@
       syncEmsTestUI();
     });
     syncEmsTestUI();
+    $('resetVoteBtn').addEventListener('click', () => {
+      localStorage.removeItem(POLL_VOTE_KEY);
+      $('voteYes').disabled = false; $('voteNo').disabled = false;
+      $('voteYes').style.opacity = 1; $('voteNo').style.opacity = 1;
+      alert('Your poll vote was cleared on this device. You can vote again.');
+    });
   }
 
   function syncEmsTestUI() {
