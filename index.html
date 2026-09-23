@@ -180,7 +180,7 @@
 
   <div class="legalinks"><a id="privacyLink">Privacy Policy</a><a id="termsLink">Terms of Service</a></div>
 
-  <div class="signature">Built by Edward "The WOLF" Parkinson</div>
+  <div class="signature">Built by Edward "The WOLF" Parkinson<br><span id="buildTag" style="opacity:.55;font-size:.72rem"></span></div>
 
   <!-- LEGAL MODAL -->
   <div id="legalModal" class="modal">
@@ -209,6 +209,7 @@
   const PRICE_LABEL = '$5/year';
   const OWNER_PIN = '1196';        // CHANGE THIS to a PIN only you know
   const OWNER_DEVICE_ID = 'dev-x6sfka6omuepjnki'; // Edward's phone — only this phone opens owner controls
+  const BUILD_TAG = 'v1.0.0-beta · 2026-09-23d';
   // --------------------------------
 
   // constants
@@ -243,7 +244,8 @@
   const isOwnerDevice = () => !OWNER_DEVICE_ID || getDeviceId() === OWNER_DEVICE_ID;
   function syncOwnerDeviceUI() {
     const el = $('ownerDeviceState');
-    if (el) el.textContent = 'This phone ID: ' + getDeviceId() + (OWNER_DEVICE_ID ? ' (keyed)' : ' (not keyed — send this ID to bind this phone)');
+    if (el) el.textContent = 'This phone ID: ' + getDeviceId() +
+      (OWNER_DEVICE_ID ? (getDeviceId() === OWNER_DEVICE_ID ? ' — OWNER PHONE ✓' : ' — NOT the owner phone') : ' (not keyed yet)');
   }
   const isChargeOn = () => localStorage.getItem(CHARGE_KEY) === '1';
   const isSubscribed = () => localStorage.getItem(SUB_KEY) === '1';
@@ -266,7 +268,7 @@
       titleTapTimer = setTimeout(() => { titleTaps = 0; }, 3000);
       if (titleTaps >= 5) {
         titleTaps = 0;
-        if (!isOwnerDevice()) { alert('Not the owner phone — owner controls are disabled on this device.'); return; }
+        if (!isOwnerDevice()) { alert('Not the owner phone — owner controls are disabled here.\n\nThis device ID: ' + getDeviceId() + '\nSend it to bind this phone.'); return; }
         if (isOwner()) { $('ownerPanel').style.display = ''; syncOwnerDeviceUI(); return; }
         const pin = prompt('Owner PIN:');
         if (pin === OWNER_PIN) {
@@ -631,6 +633,7 @@
     initLegal();
     initPoll();
     syncChargeUI();
+    const bt = $('buildTag'); if (bt) bt.textContent = BUILD_TAG;
     warmupGPS();
     startListening();
     if (!recognition) setStatus('Ready. Say "Stay Calm" or tap EMERGENCY');
